@@ -14,14 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 /*
  * NOTE : =============================================================
@@ -140,10 +133,11 @@ public class AddressBook {
      * The constants given below are the indexes for the different data elements of a person
      * used by the internal String[] storage format.
      * For example, a person's name is stored as the 0th element in the array.
+     *
+     * Exercise [L0-Collections]: Use HashMap instead of String[]
      */
-    private static final int PERSON_DATA_INDEX_NAME = 0;
-    private static final int PERSON_DATA_INDEX_PHONE = 1;
-    private static final int PERSON_DATA_INDEX_EMAIL = 2;
+
+    private enum PersonProperty {NAME, EMAIL, PHONE}
 
     /**
      * The number of data elements for a single person.
